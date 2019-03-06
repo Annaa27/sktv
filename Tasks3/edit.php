@@ -3,7 +3,7 @@ require 'database/QueryBuilder.php';
 
 $db = new QueryBuilder;
 
-$tasks = $db->getTask($_GET['id']);
+$tasks = $db->getOne($_GET['id']);
 ?>
 
 <!DOCTYPE html>

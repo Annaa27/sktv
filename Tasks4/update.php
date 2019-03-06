@@ -10,6 +10,6 @@ require 'database/QueryBuilder.php';
 
 $db = new QueryBuilder;
 
-$tasks = $db->updateTask($data);
+$db->update("tasks", $data);
 
-header("Location: http://localhost/MyNotes0/Tasks2/");exit;
+header("Location:./");exit;

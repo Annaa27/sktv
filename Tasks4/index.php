@@ -1,14 +1,9 @@
 <?php
-
-
 require 'database/QueryBuilder.php';
 
 $db = new QueryBuilder;
 
 $tasks = $db->all("tasks");
-
-
-
 
 ?>
 <!DOCTYPE html>
@@ -21,8 +16,7 @@ $tasks = $db->all("tasks");
         <div class="row">
          <div class="col-md-12">
          <h1>All Tasks</h1>
-         
-         <a href="#" class="btn  btn-success">Add task</a>
+         <a href="create.php" class="btn  btn-success">Add task</a>
          <table class="table">
              <thead>
                  <tr>
@@ -37,13 +31,13 @@ $tasks = $db->all("tasks");
              <td><?= $task['id'];?></td>
              <td><?= $task['title'];?></td>
              <td>
-                 <a href="show.php?id=>?= $task['id'];?>" class="btn  btn-info"> 
+                 <a href="show.php?id=<?= $task['id'];?>" class="btn  btn-info"> 
                 Show
             </a>
             <a href="edit.php?id=<?= $task['id'];?>" class="btn  btn-warning">
                 Edit
             </a>
-                 <a onclick="return confirm('are you sure?'); href="delete.php?id=<?= $task['id'];?>" class="btn  btn-danger">Delete</a> 
+                 <a onclick="return confirm('are you sure?');" href="delete.php?id=<?= $task['id'];?>" class="btn btn-danger">Delete</a> 
              </td>
              </tr>
              <?php endforeach;?>

@@ -2,8 +2,8 @@
 require 'database/QueryBuilder.php';
 
 $db = new QueryBuilder;
-
-$tasks = $db->getTask($_GET['id']);
+$id = $_GET['id'];
+$tasks = $db->getOne("tasks", $id);
 ?>
 
 <!DOCTYPE html>

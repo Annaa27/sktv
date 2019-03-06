@@ -1,10 +1,12 @@
 <?php
-$id = $_GET['id'];
+
 
 require 'database/QueryBuilder.php';
 
 $db = new QueryBuilder;
 
-$db->deleteTask($id);
+$id = $_GET['id'];
 
-header('Location: /');
+$db->delete("tasks", $id);
+
+header('Location: ./');
